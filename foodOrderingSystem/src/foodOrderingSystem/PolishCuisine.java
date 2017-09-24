@@ -1,5 +1,6 @@
 package foodOrderingSystem;
 
+//stores names and prices for Polish menu
 public class PolishCuisine extends Cuisine {
 
 	public PolishCuisine() {

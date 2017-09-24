@@ -2,12 +2,18 @@ package foodOrderingSystem;
 
 import java.util.Scanner;
 
+/* 
+ * provides implementation for choosing main course
+ * and dessert, calculates price for lunch, constructs 
+ * name for lunch consisting of main course and dessert names
+ */
 public abstract class Cuisine {
 
 	private Scanner scanner;
-	private int price;
-	private String name;
+	private int price; // price of lunch (main course and dessert)
+	private String name; // name of lunch (combined name of main course and dessert)
 	
+	// fields for names and prices of main courses and desserts
 	protected String main1;
 	protected int main1Price;
 	protected String dessert1;
@@ -29,14 +35,17 @@ public abstract class Cuisine {
 		return name;
 	}
 	
+	// returns list of offered main courses
 	private String getMainMenu() {
 		return "1. " + main1 + "\n2. " + main2 + "\n3. " + main3;
 	}
-
+	
+	// return list of offered desserts
 	private String getDessertMenu() {
 		return "1. " + dessert1 + "\n2. " + dessert2 + "\n3. " + dessert3;
 	}
-
+	
+	// provides choice of main courses
 	public void mainCourse() {
 		System.out.println("Please choose main course\n" + getMainMenu());
 		scanner = new Scanner(System.in);
@@ -62,7 +71,8 @@ public abstract class Cuisine {
 			this.mainCourse();
 		}
 	}
-
+	
+	// provides choice of offered desserts
 	public void dessert() {
 		System.out.println("Please choose dessert\n" + getDessertMenu());
 		scanner = new Scanner(System.in);

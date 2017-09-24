@@ -1,5 +1,6 @@
 package foodOrderingSystem;
 
+//stores names and prices for Mexican menu
 public class MexicanCuisine extends Cuisine {
 
 	public MexicanCuisine() {

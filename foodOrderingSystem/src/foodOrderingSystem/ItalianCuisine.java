@@ -1,5 +1,6 @@
 package foodOrderingSystem;
 
+// stores names and prices for Italian menu
 public class ItalianCuisine extends Cuisine {
 
 	public ItalianCuisine() {

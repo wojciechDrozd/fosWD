@@ -2,13 +2,22 @@ package foodOrderingSystem;
 
 import java.util.Scanner;
 
+/*
+ * provides implementation of main user menu,
+ * enables choosing between drink, lunch and lunch cuisine,
+ * creates instances of Drink and Cuisine objects,
+ * asks for first and following orders, 
+ * summarizes cost for all orders,
+ * ends the program when user finished ordering
+ */
 public class Menu {
 
 	private Scanner scanner;
-	private int cuisineChoice;
-	private int totalCost;
-	private int count = 1;
+	private int cuisineChoice; // stores user's cuisine choice
+	private int totalCost; // stores total cost of orders
+	private int count = 1; //counter of orders
 
+	// welcomes user and offers choice between drink and lunch
 	public void start() {
 		if (count != 1) {
 			System.out.println("Hello, what do you want to order?\n" + "1. drink\n" + "2. lunch\n");
@@ -35,7 +44,12 @@ public class Menu {
 			this.start();
 		}
 	}
-
+	
+	/*
+	 * creates instance of Drink object,
+	 * informs user about the cost of his order
+	 * adds cost of drink to total cost of all orders
+	 */
 	private void orderDrink() {
 		try {
 			Drink drink = new Drink();
@@ -48,7 +62,12 @@ public class Menu {
 		}
 		askForOrder();
 	}
-
+	
+	/*
+	 * provides choice of cuisines
+	 * informs about price of lunch
+	 * adds cost of lunch to total cost of all orders
+	 */
 	private void orderLunch() {
 		System.out.println("Please choose cuisine\n" + "1. Polish\n" + "2. Mexican\n" + "3. Italian\n");
 		try {
@@ -68,7 +87,8 @@ public class Menu {
 		}
 		askForOrder();
 	}
-
+	
+	// creates object of couisine depending on user's choice
 	public Cuisine getCuisine(int cuisineChoice) {
 
 		switch (cuisineChoice) {
@@ -89,7 +109,11 @@ public class Menu {
 			return new PolishCuisine();
 		}
 	}
-
+	
+	/*
+	 *  asks for another order and enables program to finish
+	 *  informs about total cost of orders
+	 */
 	public void askForOrder() {
 		try {
 			System.out.println("Do you want to place another order? (y/n)");

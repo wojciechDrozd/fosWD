@@ -6,7 +6,8 @@ public class Drink {
 	private Scanner scanner;
 	private int price;
 	private String name;
-
+	
+	// provides user with choice of drinks
 	public void start() {
 		scanner = new Scanner(System.in);
 		System.out.println("Please choose your drink\n" + "1. Water\n" + "2. Sprite\n" + "3. Ice Tea\n");
@@ -38,7 +39,9 @@ public class Drink {
 			this.start();
 		}
 	}
-
+	
+	
+	// offers user a lemon
 	public void askForLemon() {
 		System.out.println("Do you want some lemon? (y/n)");
 		String lemon = scanner.next();
@@ -50,6 +53,7 @@ public class Drink {
 		}
 	}
 
+	// offers user ice cubes
 	public void askForIce() {
 		System.out.println("Do you want some ice? (y/n)");
 		String ice = scanner.next();

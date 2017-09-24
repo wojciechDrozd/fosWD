@@ -7,6 +7,7 @@ public class App {
 		app.start();
 	}
 	
+	// creates instance of users menu
 	private void start(){
 		Menu menu = new Menu();
 		menu.start();
